@@ -1,0 +1,8 @@
+# {{ ansible_managed }}
+
+{% for nameserver in resolv_conf_nameservers %}
+nameserver {{ nameserver }}
+{% endfor %}
+{% for search_domain in resolv_conf_search_domains %}
+search {{ search_domain }}
+{% endfor %}
