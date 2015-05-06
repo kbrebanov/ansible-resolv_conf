@@ -1,6 +1,8 @@
 resolv_conf
 ===========
 
+[![Ansible Galaxy](https://img.shields.io/badge/galaxy-kbrebanov.resolv_conf-660198.svg)](https://galaxy.ansible.com/list#/roles/3389)
+
 Configures /etc/resolv.conf file
 
 Requirements
