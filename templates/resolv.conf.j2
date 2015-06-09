@@ -4,5 +4,7 @@
 nameserver {{ nameserver }}
 {% endfor %}
 {% for search_domain in resolv_conf_search_domains %}
+{% if search_domain %}
 search {{ search_domain }}
+{% endif %}
 {% endfor %}
