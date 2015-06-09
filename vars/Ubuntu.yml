@@ -1,2 +1,4 @@
 ---
 # vars file for resolv_conf (Ubuntu specific)
+
+resolv_conf_path: /var/run/resolvconf/resolv.conf
