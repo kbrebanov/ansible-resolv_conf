@@ -15,7 +15,7 @@ Role Variables
 
 | Name                       | Default                  | Description                     |
 |----------------------------|--------------------------|---------------------------------|
-| resolv_conf_nameservers    | ['8.8.8.8']              | List of nameserver IP addresses |
+| resolv_conf_nameservers    | ['8.8.8.8', '8.8.4.4']   | List of nameserver IP addresses |
 | resolv_conf_search_domains | ["{{ ansible_domain }}"] | List of search domains          |
 
 Dependencies
