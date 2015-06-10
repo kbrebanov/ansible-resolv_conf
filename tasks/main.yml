@@ -16,7 +16,7 @@
 - name: Create /etc/resolv.conf configuration
   template: >
     src=resolv.conf.j2
-    dest={{ resolv_conf_path }}
+    dest=/etc/resolv.conf
     owner=root
     group=root
     mode=0644
