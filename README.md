@@ -1,7 +1,7 @@
 resolv_conf
 ===========
 
-[![Ansible Galaxy](https://img.shields.io/badge/galaxy-kbrebanov.resolv_conf-660198.svg)](https://galaxy.ansible.com/list#/roles/3389)
+[![Ansible Role](https://img.shields.io/ansible/role/3389.svg)](https://galaxy.ansible.com/list#/roles/3389)
 
 Configures /etc/resolv.conf file
 
