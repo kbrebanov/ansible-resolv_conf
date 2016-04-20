@@ -2,22 +2,28 @@
 # tasks file for resolv_conf (Ubuntu specific)
 
 - name: Stat /etc/resolv.conf
-  stat: path=/etc/resolv.conf
+  stat:
+    path: /etc/resolv.conf
   register: resolvconf
-  tags: resolv_conf
+  tags:
+    - resolv_conf
 
 - name: Remove /etc/resolv.conf if symbolic link
-  file: >
-    path=/etc/resolv.conf
-    state=absent
+  become: yes
+  file:
+    path: /etc/resolv.conf
+    state: absent
   when: resolvconf.stat.islnk
-  tags: resolv_conf
+  tags:
+    - resolv_conf
 
 - name: Create dhclient hook to prevent it from updating /etc/resolv.conf
-  copy: >
-    src=nodnsupdate
-    dest=/etc/dhcp/dhclient-enter-hooks.d/nodnsupdate
-    owner=root
-    group=root
-    mode=0644
-  tags: resolv_conf
+  become: yes
+  copy:
+    src: nodnsupdate
+    dest: /etc/dhcp/dhclient-enter-hooks.d/nodnsupdate
+    owner: root
+    group: root
+    mode: 0644
+  tags:
+    - resolv_conf

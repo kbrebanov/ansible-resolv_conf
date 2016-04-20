@@ -3,21 +3,26 @@
 
 - name: Include distribution specific variables
   include_vars: "{{ ansible_distribution }}.yml"
-  tags: resolv_conf
+  tags:
+    - resolv_conf
 
 - include: CentOS.yml
   when: ansible_distribution == "CentOS"
-  tags: resolv_conf
+  tags:
+    - resolv_conf
 
 - include: Ubuntu.yml
   when: ansible_distribution == "Ubuntu"
-  tags: resolv_conf
+  tags:
+    - resolv_conf
 
 - name: Create /etc/resolv.conf configuration
-  template: >
-    src=resolv.conf.j2
-    dest=/etc/resolv.conf
-    owner=root
-    group=root
-    mode=0644
-  tags: resolv_conf
+  become: yes
+  template:
+    src: resolv.conf.j2
+    dest: /etc/resolv.conf
+    owner: root
+    group: root
+    mode: 0644
+  tags:
+    - resolv_conf
