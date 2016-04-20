@@ -8,13 +8,13 @@ Configures /etc/resolv.conf file
 Requirements
 ------------
 
-This role requires Ansible 1.4 or higher.
+This role requires Ansible 1.9 or higher.
 
 Role Variables
 --------------
 
 | Name                       | Default                  | Description                     |
-|----------------------------|--------------------------|---------------------------------|
+|:---------------------------|:-------------------------|:--------------------------------|
 | resolv_conf_nameservers    | ['8.8.8.8', '8.8.4.4']   | List of nameserver IP addresses |
 | resolv_conf_search_domains | ["{{ ansible_domain }}"] | List of search domains          |
 
