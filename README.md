@@ -27,17 +27,23 @@ Example Playbook
 ----------------
 
 Configure /etc/resolv.conf file with default values
-```
+```yaml
 - hosts: all
   roles:
-    - { role: kbrebanov.resolv_conf }
+    - kbrebanov.resolv_conf
 ```
 
 Configure /etc/resolv.conf file specifying nameservers and a search domain
-```
+```yaml
 - hosts: all
+  vars:
+    resolv_conf_nameservers:
+      - 8.8.4.4
+      - 8.8.8.8
+    resolv_conf_search_domains:
+      - example.com
   roles:
-    - { role: kbrebanov.resolv_conf, resolv_conf_nameservers: ['8.8.4.4', '8.8.8.8'], resolv_conf_search_domains: ['example.com'] }
+    - kbrebanov.resolv_conf
 ```
 
 License
