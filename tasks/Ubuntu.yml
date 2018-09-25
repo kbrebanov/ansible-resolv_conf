@@ -17,6 +17,13 @@
   tags:
     - resolv_conf
 
+- name: Install isc-dhcp-client if not present
+  apt:
+    name: isc-dhcp-client
+    update_cache: yes
+    cache_valid_time: "{{ apt_update_cache_valid_time | default(3600) }}"
+    state: present
+
 - name: Create dhclient hook to prevent it from updating /etc/resolv.conf
   become: yes
   copy:
